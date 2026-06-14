@@ -72,15 +72,17 @@ const fragment = /* glsl */ `
   void main() {
     vec2 uv = gl_PointCoord.xy;
     float d = length(uv - vec2(0.5));
+    float shimmer = 0.82 + 0.18 * sin(uTime + vRandom.y * 6.28);
+    vec3 color = clamp(vColor * shimmer + vec3(0.0, 0.025, 0.075), 0.0, 1.0);
     
     if(uAlphaParticles < 0.5) {
       if(d > 0.5) {
         discard;
       }
-      gl_FragColor = vec4(vColor + 0.2 * sin(uv.yxx + uTime + vRandom.y * 6.28), 1.0);
+      gl_FragColor = vec4(color, 1.0);
     } else {
       float circle = smoothstep(0.5, 0.4, d) * 0.8;
-      gl_FragColor = vec4(vColor + 0.2 * sin(uv.yxx + uTime + vRandom.y * 6.28), circle);
+      gl_FragColor = vec4(color, circle);
     }
   }
 `;
@@ -106,8 +108,23 @@ const Particles = ({
       const container = containerRef.current;
       if (!container) return;
 
-      const renderer = new Renderer({ depth: false, alpha: true });
+      let renderer;
+      const canUseWebGL = (() => {
+         const canvas = document.createElement("canvas");
+         return Boolean(canvas.getContext("webgl") || canvas.getContext("experimental-webgl"));
+      })();
+
+      if (!canUseWebGL) return;
+
+      try {
+         renderer = new Renderer({ depth: false, alpha: true });
+      } catch {
+         return;
+      }
+
       const gl = renderer.gl;
+      if (!gl?.canvas) return;
+
       container.appendChild(gl.canvas);
       gl.clearColor(0, 0, 0, 0);
 
@@ -232,7 +249,7 @@ const Particles = ({
       disableRotation
    ]);
 
-   return <div ref={containerRef} className={`particles-container ${className}`} />;
+   return <div ref={containerRef} className={["particles-container", className].filter(Boolean).join(" ")} />;
 };
 
 export default Particles;

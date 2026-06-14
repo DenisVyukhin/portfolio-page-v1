@@ -1,109 +1,154 @@
-
 .card {
    position: relative;
-   background-color: var(--background-color);
-   width: calc(100% - 50px);
-   max-width: 1000px;
-   height: 200px;
-   overflow-x: hidden;
-   border: 1px solid var(--panel-color);
-   border-radius: 15px;
-   box-shadow: 0px 4px 10px rgba(0, 0, 0, .125);
-   cursor: pointer;
-   transition: all .125s;
-   display: flex;
+   display: grid;
+   grid-template-columns: minmax(260px, 36%) 1fr;
+   gap: 22px;
+   width: min(100% - 40px, 1040px);
+   min-height: 260px;
+   margin: 0 auto;
+   padding: 14px;
+   overflow: hidden;
    text-align: left;
-   padding: 10px;
-   margin: auto;
+   background:
+      linear-gradient(135deg, rgba(255, 255, 255, .05), transparent 45%),
+      var(--surface-color);
+   border: 1px solid var(--panel-color);
+   border-radius: 8px;
+   box-shadow: var(--shadow-soft);
+   transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.card h2 {
-   margin-bottom: 0;
-   margin-top: 15px;
-}
-.card p {
-   word-spacing: 7%;
-   font-size: 0.95rem;
-}
-.card:hover .image {
-   background-color: red;
+
+.card:hover {
+   border-color: var(--accent-color-1);
+   box-shadow: var(--shadow-accent);
+   transform: translateY(-3px);
 }
 
 .image {
-   min-width: 350px;
-   height: 200px;
-   border-radius: 5px;
+   min-height: 232px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border: 1px solid var(--panel-color);
+   border-radius: 6px;
 }
 
-.right-side {
-   padding: 0 20px;
+.content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-width: 0;
+   padding: 8px 8px 8px 0;
 }
 
-.buttons-container {
-   position: absolute;
+.impact {
+   display: inline-flex;
    width: fit-content;
-   height: fit-content;
-   display: flex;
-   gap: 15px;
-   bottom: 20px;
-}
-.buttons-container button {
-   padding: 10px 25px;
-   display: flex;
-   gap: 10px;
-   align-items: center;
-   border-radius: 10px;
-   font-family: 'Montserrat';
-   font-weight: 500;
-   font-size: 0.8rem;
-   cursor: pointer;
-   transition: all .25s;
-}
-.buttons-container button:hover {
-   transform: scale(1.05);
-}
-.buttons-container button.github {
-   background-color: var(--background-color);
-   color: var(--main-text);
-   border: none;
-   filter: invert(1);
-}
-.buttons-container button.open {
-   background: linear-gradient(to left, var(--accent-color-1), var(--accent-color-2));
-   color: white;
-   border: none;
+   margin-bottom: 10px;
+   padding: 6px 10px;
+   color: var(--accent-color-1);
+   font-size: .75rem;
+   font-weight: 700;
+   line-height: 1.2;
+   background-color: var(--accent-soft);
+   border: 1px solid rgba(0, 149, 255, .28);
+   border-radius: 999px;
 }
 
-@media (max-width: 880px) {
+.card h3 {
+   margin: 0;
+   color: var(--main-text);
+   font-size: 1.55rem;
+   line-height: 1.2;
+}
+
+.card p {
+   max-width: 58rem;
+   margin: 12px 0 0;
+   color: var(--simple-text);
+   font-size: .96rem;
+   line-height: 1.75;
+}
+
+.stack {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin: 18px 0;
+}
+
+.stack span {
+   padding: 6px 9px;
+   color: var(--muted-text);
+   font-size: .75rem;
+   font-weight: 600;
+   background-color: var(--chip-color);
+   border: 1px solid var(--panel-color);
+   border-radius: 999px;
+}
+
+.actions {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+}
+
+.actions a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 9px;
+   min-height: 42px;
+   padding: 0 18px;
+   color: var(--main-text);
+   font-size: .86rem;
+   font-weight: 700;
+   text-decoration: none;
+   border-radius: 999px;
+   transition: transform .2s ease, opacity .2s ease, border-color .2s ease;
+}
+
+.actions a:hover {
+   transform: translateY(-2px);
+}
+
+.open {
+   color: #ffffff !important;
+   background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-2));
+   border: 1px solid transparent;
+}
+
+.github {
+   background-color: var(--chip-color);
+   border: 1px solid var(--panel-color);
+}
+
+.github:hover {
+   border-color: var(--main-text);
+}
+
+@media (max-width: 820px) {
    .card {
-      display: block;
-      height: 470px;
+      grid-template-columns: 1fr;
+      width: min(100% - 28px, 560px);
+   }
+
+   .content {
+      padding: 0;
+   }
+}
+
+@media (max-width: 440px) {
+   .card {
+      width: 100%;
+      padding: 10px;
    }
 
    .image {
-      position: static;
-      width: 100%;
-      min-width: 50px;
-      box-sizing: border-box;
+      min-height: 190px;
    }
 
-   .right-side {
-      padding: 0px 10px;
-   }
-
-   .right-side h2 {
-      margin-top: 20px;
-   }
-
-   .buttons-container {
-      box-sizing: border-box;
-      max-width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-   }
-}
-@media (max-width: 785px) {
-   .card {
-      width: 400px;
-      height: 420px;
+   .actions a {
+      flex: 1 1 140px;
    }
 }
