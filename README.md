@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KodersUp Portfolio
 
-## Getting Started
+Это мой сайт-портфолио: здесь собраны проекты, стек, опыт, контакты и резюме.
 
-First, run the development server:
+![KodersUp Portfolio](public/readme-preview.png)
+
+## Сайт
+
+На главной странице есть всё, что нужно для быстрого знакомства:
+
+- интерактивный hero-блок с кратким описанием;
+- список проектов с описанием, стеком, ссылками и GitHub;
+- секция навыков по направлениям: фронтенд, бекенд, инструменты;
+- блок “Обо мне” с опытом, фактами и кнопкой скачивания резюме;
+- контакты: Telegram, GitHub, VK и Email;
+- поддержка светлой и тёмной темы.
+
+## Стек
+
+- **Next.js 16** — App Router, сборка через Turbopack.
+- **React 19** — компоненты интерфейса.
+- **Tailwind CSS 4** и глобальные CSS-модули — стилизация.
+- **GSAP**, **Motion**, **OGL** — анимации, частицы и визуальные эффекты.
+- **next-themes** — переключение темы.
+- **react-icons** — иконки интерфейса.
+- **Vercel Speed Insights** — метрики производительности.
+
+## Запуск
+
+Требуется Node.js `18.17+` или новее.
+
+Установить зависимости:
+
+```bash
+npm install
+```
+
+Запустить проект в режиме разработки:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открыть в браузере:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Сборка
 
-## Learn More
+Собрать production-версию:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Запустить собранный проект:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run start
+```
 
-## Deploy on Vercel
+## Структура
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+src/app/
+  layout.jsx                общий layout, метаданные, шрифт, Header и фоновые частицы
+  page.jsx                  главная страница: hero, проекты, стек, обо мне и контакты
+  globals.css               глобальные стили, темы и базовая адаптивность
+  loading.jsx               экран загрузки
+  not-found.jsx             страница 404
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+src/Components/
+  Header/                   верхняя навигация и переключатель темы
+  Footer/                   нижний блок сайта
+  ProjectCard/              карточки проектов
+  Animations/               анимированный текст, частицы, aurora-эффекты
+
+src/Utils/
+  ThemeProvider.jsx         провайдер темы для next-themes
+  GetSystemTheme.jsx        определение системной темы
+
+public/
+  icons/                    favicon, shortcut icon и apple touch icon
+  *.webp                    изображения для hero, стека и проектов
+  denis-vyuhin-resume.txt   резюме для скачивания
+  readme-preview.png        скрин главного экрана для README
+```

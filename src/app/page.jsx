@@ -339,7 +339,7 @@ function Home() {
                         <TextType
                            as="span"
                            className="text-type"
-                           text={["Fullstack разработчик", "AI интегратор", "спортсмен"]}
+                           text={["Fullstack разработчик", "AI интегратор", "Cпортсмен"]}
                            typingSpeed={58}
                            pauseDuration={2200}
                            showCursor={true}
