@@ -2,7 +2,7 @@
 
 Это мой сайт-портфолио: здесь собраны проекты, стек, опыт, контакты и резюме.
 
-![KodersUp Portfolio](public/readme-preview.png)
+![KodersUp Portfolio](public/readme-page-preview.png)
 
 ## Сайт
 
