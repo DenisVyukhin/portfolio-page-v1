@@ -34,6 +34,16 @@ const getProfileTiming = () => ({
 
 const projects = [
    {
+      name: "Arc Dynamics",
+      description:
+         "Аналог сайта Boston Dynamics, сделанный для портфолио: продуктовый сайт робототехнической компании.",
+      stack: ["Next.js", "React JS", "TypeScript", "Tailwind", "ESLint"],
+      impact: "Учебный fullstack-проект",
+      img: "arc-dynamics-preview.png",
+      link: "https://arc-dynamics.vercel.app/",
+      gitlink: "https://github.com/DenisVyukhin/Arc-Dynamic",
+   },
+   {
       name: "IU Helper",
       description:
          "Telegram-бот для поиска и публикации учебных ответов. Есть ИИ-ассистент, система пользовательских решений и ежегодные розыгрыши для активных участников.",
@@ -54,34 +64,24 @@ const projects = [
       gitlink: "https://github.com/DenisVyuhin/",
    },
    {
-      name: "Hexvel Portfolio",
-      description:
-         "Динамическое портфолио с несколькими темами, UI-эффектами, анимациями и аккуратной подачей персонального бренда.",
-      stack: ["React", "SCSS", "React Bits"],
-      impact: "Персональный бренд",
-      img: "hexvel.webp",
-      link: "https://hexvel.vercel.app/",
-      gitlink: "https://github.com/DenisVyuhin/",
-   },
-   {
-      name: "Boston Dynamics landing",
-      description:
-         "Лендинг о роботах Boston Dynamics с информационными секциями, анимациями и базовой серверной логикой.",
-      stack: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-      impact: "Учебный fullstack-проект",
-      img: "boston-dynamics.webp",
-      link: "https://bostondynamics.com/products/atlas/",
-      gitlink: "https://github.com/DenisVyuhin/",
-   },
-   {
       name: "Twitblit",
       description:
          "Социальная сеть в духе Reddit и Twitter: посты, обсуждения и ИИ-боты, которые могут участвовать в диалогах.",
       stack: ["Web app", "AI bots", "Social UX"],
       impact: "Эксперимент с AI-сообществом",
-      img: "twitblit.webp",
+      img: "twitblit.png",
       link: "https://twitblit.ru/",
       gitlink: "https://github.com/DenisVyuhin/",
+   },
+   {
+      name: "KodersUp Portfolio",
+      description:
+         "Динамическое портфолио с несколькими темами, UI-эффектами, анимациями и аккуратной подачей персонального бренда.",
+      stack: ["React JS", "React Bits", "GSAP", "SCSS", "Vercel SI"],
+      impact: "Персональный бренд",
+      img: "readme-page-preview.png",
+      link: "https://kodersup-portfolio.vercel.app/",
+      gitlink: "https://github.com/DenisVyukhin/portfolio-page-v1",
    },
    {
       name: "Kazinkov Bot",
@@ -94,14 +94,14 @@ const projects = [
       gitlink: "https://github.com/DenisVyuhin/",
    },
    {
-      name: "NeuroGPT",
+      name: "APDE 2.0",
       description:
-         "Мобильный чат с несколькими ИИ-моделями. Приложение написано на телефоне, а часть моделей запускается локально без постоянного интернета.",
-      stack: ["Processing", "Java", "Local AI"],
-      impact: "Mobile-first эксперимент",
-      img: "project_1.webp",
+         "Мобильный редактор кода на Processing (Java) для Android. Позволяет запускать скетчи прямо на телефоне или планшете.",
+      stack: ["Processing", "Java", "Gradle", "Local AI"],
+      impact: "Аналог мобильного приложения",
+      img: "apde.png",
       link: "/projects",
-      gitlink: "https://github.com/DenisVyuhin/",
+      gitlink: "https://github.com/DenisVyuhin/APDE-2.0",
    },
 ];
 
@@ -416,16 +416,16 @@ function Home() {
             <div className="about-me-container">
                <div className="about-copy">
                   <p>
-                     Меня зовут Денис. Я люблю разбираться, как устроены сложные вещи,
-                     и доводить идеи до работающего результата. В детстве собирал LEGO
-                     и роботов без инструкций, позже занимался авиамоделированием и сделал
-                     глиссер, который включили в программу обучения.
+                     Меня зовут Денис. С раннего возраста мне было интересно разбираться в том,
+                     как устроены сложные технологии и системы. Этот интерес привёл меня от конструирования
+                     моделей и робототехники к программированию и созданию собственныхпроектов.
                   </p>
                   <p>
-                     Сейчас фокус на fullstack-разработке, Telegram-ботах, ИИ-интеграциях
-                     и интерфейсах, которые не просто выглядят эффектно, а решают задачу.
-                     Спорт дал мне дисциплину: я рекордсмен России по пауэрлифтингу и привык
-                     работать на результат.
+                     Сегодня я занимаюсь fullstack-разработкой, Telegram-ботами, мобильными
+                     приложениями и ИИ-интеграциями. Для меня важно не только написать код,
+                     но и создать продукт, который решает реальные задачи. Профессиональный спорт 
+                     и звание рекордсмена России по пауэрлифтингу помогли развить дисциплину,
+                     ответственность и умение доводить начатое до результата.
                   </p>
                </div>
 

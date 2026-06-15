@@ -85,6 +85,7 @@
    background-color: var(--chip-color);
    border: 1px solid var(--panel-color);
    border-radius: 999px;
+   cursor: pointer;
 }
 
 .actions {
