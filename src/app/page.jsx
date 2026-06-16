@@ -34,14 +34,14 @@ const getProfileTiming = () => ({
 
 const projects = [
    {
-      name: "Arc Dynamics",
+      name: "APDE 2.0",
       description:
-         "Аналог сайта Boston Dynamics, сделанный для портфолио: продуктовый сайт робототехнической компании.",
-      stack: ["Next.js", "React JS", "TypeScript", "Tailwind", "ESLint"],
-      impact: "Учебный fullstack-проект",
-      img: "arc-dynamics-preview.png",
-      link: "https://arc-dynamics.vercel.app/",
-      gitlink: "https://github.com/DenisVyukhin/Arc-Dynamic",
+         "Мобильный IDE для Processing (Java) на Android. Позволяет запускать скетчи прямо на телефоне или планшете.",
+      stack: ["Processing", "Java", "Kotlin", "Gradle", "Local AI"],
+      impact: "Аналог мобильного приложения",
+      img: "apde.png",
+      link: "/projects",
+      gitlink: "https://github.com/DenisVyukhin/APDE-2.0",
    },
    {
       name: "IU Helper",
@@ -74,6 +74,16 @@ const projects = [
       gitlink: "https://github.com/DenisVyukhin/",
    },
    {
+      name: "Arc Dynamics",
+      description:
+         "Аналог сайта Boston Dynamics, сделанный для портфолио: продуктовый сайт робототехнической компании.",
+      stack: ["Next.js", "React JS", "TypeScript", "Tailwind", "ESLint"],
+      impact: "Учебный fullstack-проект",
+      img: "arc-dynamics-preview.png",
+      link: "https://arc-dynamics.vercel.app/",
+      gitlink: "https://github.com/DenisVyukhin/Arc-Dynamic",
+   },
+   {
       name: "KodersUp Portfolio",
       description:
          "Динамическое портфолио с несколькими темами, UI-эффектами, анимациями и аккуратной подачей персонального бренда.",
@@ -92,16 +102,6 @@ const projects = [
       img: "bot.png",
       link: "https://t.me/KazinkovBot",
       gitlink: "https://github.com/DenisVyukhin/",
-   },
-   {
-      name: "APDE 2.0",
-      description:
-         "Мобильный IDE для Processing (Java) на Android. Позволяет запускать скетчи прямо на телефоне или планшете.",
-      stack: ["Processing", "Java", "Gradle", "Local AI"],
-      impact: "Аналог мобильного приложения",
-      img: "apde.png",
-      link: "/projects",
-      gitlink: "https://github.com/DenisVyukhin/APDE-2.0",
    },
 ];
 
