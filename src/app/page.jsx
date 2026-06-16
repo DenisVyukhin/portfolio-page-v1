@@ -51,7 +51,7 @@ const projects = [
       impact: "50 000+ руб. выручки",
       img: "telegram-bot.webp",
       link: "https://t.me/iu_helper_bot",
-      gitlink: "https://github.com/DenisVyuhin/IU-Helper-v2.0",
+      gitlink: "https://github.com/DenisVyukhin/IU-Helper-v2.0",
    },
    {
       name: "Renneo",
@@ -61,7 +61,7 @@ const projects = [
       impact: "Коммерческий сайт",
       img: "renneo.webp",
       link: "https://renneo.ru/",
-      gitlink: "https://github.com/DenisVyuhin/",
+      gitlink: "https://github.com/DenisVyukhin/",
    },
    {
       name: "Twitblit",
@@ -71,7 +71,7 @@ const projects = [
       impact: "Эксперимент с AI-сообществом",
       img: "twitblit.png",
       link: "https://twitblit.ru/",
-      gitlink: "https://github.com/DenisVyuhin/",
+      gitlink: "https://github.com/DenisVyukhin/",
    },
    {
       name: "KodersUp Portfolio",
@@ -89,19 +89,19 @@ const projects = [
          "Развлекательный Telegram-бот с игровой валютой, набором мини-игр, ИИ-интеграциями и сезонными активностями.",
       stack: ["Python", "Aiogram", "PostgreSQL", "SQLAlchemy", "Gemini AI"],
       impact: "Игровая экономика",
-      img: "kazinkov-bot.webp",
+      img: "bot.png",
       link: "https://t.me/KazinkovBot",
-      gitlink: "https://github.com/DenisVyuhin/",
+      gitlink: "https://github.com/DenisVyukhin/",
    },
    {
       name: "APDE 2.0",
       description:
-         "Мобильный редактор кода на Processing (Java) для Android. Позволяет запускать скетчи прямо на телефоне или планшете.",
+         "Мобильный IDE для Processing (Java) на Android. Позволяет запускать скетчи прямо на телефоне или планшете.",
       stack: ["Processing", "Java", "Gradle", "Local AI"],
       impact: "Аналог мобильного приложения",
       img: "apde.png",
       link: "/projects",
-      gitlink: "https://github.com/DenisVyuhin/APDE-2.0",
+      gitlink: "https://github.com/DenisVyukhin/APDE-2.0",
    },
 ];
 
@@ -144,7 +144,7 @@ const stackGroups = [
 
 const highlights = [
    "Fullstack-разработка с 2021 года",
-   "Рекордсмен России по пауэрлифтингу",
+   "Рекордсмен по пауэрлифтингу",
    "Победитель Yandex Cup",
    "Делаю проекты от идеи до запуска",
 ];
@@ -158,13 +158,13 @@ const contacts = [
    },
    {
       label: "GitHub",
-      href: "https://github.com/DenisVyuhin/",
+      href: "https://github.com/DenisVyukhin/",
       className: "github",
       icon: FiGithub,
    },
    {
       label: "VKontakte",
-      href: "https://vk.com/kodersUp",
+      href: "https://vk.com/kodersup_iu",
       className: "vk",
       icon: FaVk,
    },
@@ -424,23 +424,23 @@ function Home() {
                      Сегодня я занимаюсь fullstack-разработкой, Telegram-ботами, мобильными
                      приложениями и ИИ-интеграциями. Для меня важно не только написать код,
                      но и создать продукт, который решает реальные задачи. Профессиональный спорт 
-                     и звание рекордсмена России по пауэрлифтингу помогли развить дисциплину,
+                     и звание рекордсмена по пауэрлифтингу помогли развить дисциплину,
                      ответственность и умение доводить начатое до результата.
                   </p>
                </div>
 
                <div className="about-stats" aria-label="Достижения">
                   <div>
-                     <strong>300 000 руб.</strong>
-                     <span>самостоятельно заработал на MacBook</span>
-                  </div>
-                  <div>
-                     <strong>50 000+ руб.</strong>
-                     <span>принес Telegram-бот IU Helper</span>
+                     <strong>Собственная IDE</strong>
+                     <span>среда программирования для Android</span>
                   </div>
                   <div>
                      <strong>{experience}+ лет</strong>
                      <span>практики в разработке</span>
+                  </div>
+                  <div>
+                     <strong>КМС</strong>
+                     <span>рекордсмен по пауэрлифтингу</span>
                   </div>
                </div>
 
