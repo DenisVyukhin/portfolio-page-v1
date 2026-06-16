@@ -712,6 +712,7 @@ hr {
 .technology.next:hover { border-color: var(--main-text); color: var(--main-text); box-shadow: 0 0 22px rgba(255, 255, 255, .12); }
 .technology.tailwind:hover { border-color: #38bdf8; color: #38bdf8; box-shadow: 0 0 22px rgba(56, 189, 248, .18); }
 .technology.python:hover { border-color: #77d970; color: #77d970; box-shadow: 0 0 22px rgba(119, 217, 112, .18); }
+.technology.java:hover { border-color: #ff7626; color: #ff7626; box-shadow: 0 0 22px rgba(119, 217, 112, .18); }
 .technology.django:hover { border-color: #0070e0; color: #0070e0; box-shadow: 0 0 22px rgba(0, 112, 224, .18); }
 .technology.mysql:hover { border-color: #7dd3fc; color: #7dd3fc; box-shadow: 0 0 22px rgba(125, 211, 252, .18); }
 .technology.mongodb:hover { border-color: #65d46e; color: #65d46e; box-shadow: 0 0 22px rgba(101, 212, 110, .18); }

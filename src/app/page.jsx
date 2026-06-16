@@ -124,6 +124,7 @@ const stackGroups = [
       imageId: "backend-image",
       items: [
          ["Python", "python"],
+         ["Java", "java"],
          ["Django", "django"],
          ["Node.js", "node"],
          ["PostgreSQL", "mysql"],
@@ -445,7 +446,7 @@ function Home() {
                </div>
 
                <div className="resume-container">
-                  <a href="/denis-vyuhin-resume.txt" download>
+                  <a href="/no_resume.png" download>
                      <FiDownload size={20} />
                      Скачать резюме
                   </a>
