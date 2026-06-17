@@ -12,6 +12,7 @@ import { FaVk } from "react-icons/fa";
 
 import Footer from "@/Components/Footer/Footer.jsx";
 import ProjectCard from "@/Components/ProjectCard/ProjectsCard.jsx";
+import ScrollReveal from "@/Components/Animations/ScrollReveal.jsx";
 import TextType from "@/Components/Animations/TextType.jsx";
 
 const birthDate = new Date("2008-07-16");
@@ -292,7 +293,12 @@ function Home() {
       <main>
          <section className="hero-wrapper" aria-labelledby="hero-title">
             <div className="hero-content">
-               <div className="hero-visual" ref={heroVisualRef}>
+               <ScrollReveal
+                  className="hero-visual"
+                  ref={heroVisualRef}
+                  variant="scale"
+                  threshold={0.08}
+               >
                   <div
                      ref={heroObjectRef}
                      className="hero-object"
@@ -331,9 +337,9 @@ function Home() {
                         </div>
                      </div>
                   </div>
-               </div>
+               </ScrollReveal>
 
-               <div className="hero-text">
+               <ScrollReveal className="hero-text" variant="right" delay={120} threshold={0.08}>
                   <p className="eyebrow">KodersUp / Denis Vyuhin</p>
                   <h1 id="hero-title">
                      <span className="hero-title-stage">
@@ -366,34 +372,53 @@ function Home() {
                      </a>
                   </div>
 
-               </div>
+               </ScrollReveal>
 
                <div className="hero-facts" aria-label="Ключевые факты">
-                  {highlights.map((highlight) => (
-                     <span key={highlight}>{highlight}</span>
+                  {highlights.map((highlight, index) => (
+                     <ScrollReveal
+                        as="span"
+                        key={highlight}
+                        delay={220 + index * 70}
+                        threshold={0.08}
+                     >
+                        {highlight}
+                     </ScrollReveal>
                   ))}
                </div>
             </div>
          </section>
 
          <section className="projects-wrapper" aria-labelledby="projects">
-            <hr />
-            <p className="section-kicker">Selected works</p>
-            <h2 id="projects" className="block-name">Проекты</h2>
+            <ScrollReveal as="hr" />
+            <ScrollReveal as="p" className="section-kicker" delay={80}>Selected works</ScrollReveal>
+            <ScrollReveal as="h2" id="projects" className="block-name" delay={140}>Проекты</ScrollReveal>
             <div className="projects-grid">
-               {projects.map((project) => (
-                  <ProjectCard key={project.name} {...project} />
+               {projects.map((project, index) => (
+                  <ScrollReveal
+                     key={project.name}
+                     delay={Math.min(index * 80, 360)}
+                     threshold={0.04}
+                  >
+                     <ProjectCard {...project} />
+                  </ScrollReveal>
                ))}
             </div>
          </section>
 
          <section className="stack-wrapper" aria-labelledby="stack">
-            <hr />
-            <p className="section-kicker">Stack</p>
-            <h2 id="stack" className="block-name">Стек</h2>
+            <ScrollReveal as="hr" />
+            <ScrollReveal as="p" className="section-kicker" delay={80}>Stack</ScrollReveal>
+            <ScrollReveal as="h2" id="stack" className="block-name" delay={140}>Стек</ScrollReveal>
             <div className="stack-container">
-               {stackGroups.map((group) => (
-                  <article className="stack-block" key={group.title}>
+               {stackGroups.map((group, index) => (
+                  <ScrollReveal
+                     as="article"
+                     className="stack-block"
+                     key={group.title}
+                     delay={index * 110}
+                     variant={index % 2 === 0 ? "left" : "right"}
+                  >
                      <div className="text-content">
                         <h3>{group.title}</h3>
                         <div className="technology-container">
@@ -405,16 +430,16 @@ function Home() {
                         </div>
                      </div>
                      <div id={group.imageId} className="stack-image" aria-hidden="true" />
-                  </article>
+                  </ScrollReveal>
                ))}
             </div>
          </section>
 
          <section className="about-me-wrapper" aria-labelledby="about-me">
-            <hr />
-            <p className="section-kicker">About</p>
-            <h2 id="about-me" className="block-name">Обо мне</h2>
-            <div className="about-me-container">
+            <ScrollReveal as="hr" />
+            <ScrollReveal as="p" className="section-kicker" delay={80}>About</ScrollReveal>
+            <ScrollReveal as="h2" id="about-me" className="block-name" delay={140}>Обо мне</ScrollReveal>
+            <ScrollReveal className="about-me-container" delay={200} variant="scale">
                <div className="about-copy">
                   <p>
                      Меня зовут Денис. С раннего возраста мне было интересно разбираться в том,
@@ -431,18 +456,18 @@ function Home() {
                </div>
 
                <div className="about-stats" aria-label="Достижения">
-                  <div>
+                  <ScrollReveal delay={260} threshold={0.06}>
                      <strong>Собственная IDE</strong>
                      <span>среда программирования для Android</span>
-                  </div>
-                  <div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={330} threshold={0.06}>
                      <strong>{experience}+ лет</strong>
                      <span>практики в разработке</span>
-                  </div>
-                  <div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={400} threshold={0.06}>
                      <strong>КМС</strong>
                      <span>рекордсмен по пауэрлифтингу</span>
-                  </div>
+                  </ScrollReveal>
                </div>
 
                <div className="resume-container">
@@ -451,33 +476,34 @@ function Home() {
                      Скачать резюме
                   </a>
                </div>
-            </div>
+            </ScrollReveal>
          </section>
 
          <section className="contacts-wrapper" aria-labelledby="contacts">
-            <hr />
-            <p className="section-kicker">Contact</p>
-            <h2 id="contacts" className="block-name">Контакты</h2>
+            <ScrollReveal as="hr" />
+            <ScrollReveal as="p" className="section-kicker" delay={80}>Contact</ScrollReveal>
+            <ScrollReveal as="h2" id="contacts" className="block-name" delay={140}>Контакты</ScrollReveal>
             <div className="contacts-content">
-               <div className="contacts-container">
+               <ScrollReveal className="contacts-container" variant="scale" delay={200}>
                   <h3>Отвечаю в течение 30 минут</h3>
                   <p>ツ</p>
 
                   <div className="contacts-list">
-                     {contacts.map(({ label, href, className, icon: Icon }) => (
-                        <a
-                           href={href}
-                           target={href.startsWith("http") ? "_blank" : undefined}
-                           rel={href.startsWith("http") ? "noreferrer" : undefined}
-                           className={`contact-block ${className}`}
-                           key={label}
-                        >
-                           <Icon size={22} />
-                           {label}
-                        </a>
+                     {contacts.map(({ label, href, className, icon: Icon }, index) => (
+                        <ScrollReveal key={label} delay={280 + index * 70} threshold={0.06}>
+                           <a
+                              href={href}
+                              target={href.startsWith("http") ? "_blank" : undefined}
+                              rel={href.startsWith("http") ? "noreferrer" : undefined}
+                              className={`contact-block ${className}`}
+                           >
+                              <Icon size={22} />
+                              {label}
+                           </a>
+                        </ScrollReveal>
                      ))}
                   </div>
-               </div>
+               </ScrollReveal>
             </div>
          </section>
 

@@ -103,6 +103,12 @@ const Particles = ({
 }) => {
    const containerRef = useRef(null);
    const mouseRef = useRef({ x: 0, y: 0 });
+   const pageStateRef = useRef({
+      isScrolling: false,
+      isVisible: true,
+      lastRender: 0,
+      scrollTimeoutId: 0
+   });
 
    useEffect(() => {
       const container = containerRef.current;
@@ -150,6 +156,21 @@ const Particles = ({
       if (moveParticlesOnHover) {
          container.addEventListener('mousemove', handleMouseMove);
       }
+
+      const handlePageScroll = () => {
+         pageStateRef.current.isScrolling = true;
+         window.clearTimeout(pageStateRef.current.scrollTimeoutId);
+         pageStateRef.current.scrollTimeoutId = window.setTimeout(() => {
+            pageStateRef.current.isScrolling = false;
+         }, 140);
+      };
+
+      const handleVisibilityChange = () => {
+         pageStateRef.current.isVisible = !document.hidden;
+      };
+
+      window.addEventListener('scroll', handlePageScroll, { passive: true });
+      document.addEventListener('visibilitychange', handleVisibilityChange);
 
       const count = particleCount;
       const positions = new Float32Array(count * 3);
@@ -200,6 +221,19 @@ const Particles = ({
 
       const update = t => {
          animationFrameId = requestAnimationFrame(update);
+
+         const pageState = pageStateRef.current;
+         if (!pageState.isVisible) {
+            lastTime = t;
+            return;
+         }
+
+         if (pageState.isScrolling && t - pageState.lastRender < 120) {
+            lastTime = t;
+            return;
+         }
+
+         pageState.lastRender = t;
          const delta = t - lastTime;
          lastTime = t;
          elapsed += delta * speed;
@@ -227,6 +261,9 @@ const Particles = ({
 
       return () => {
          window.removeEventListener('resize', resize);
+         window.removeEventListener('scroll', handlePageScroll);
+         document.removeEventListener('visibilitychange', handleVisibilityChange);
+         window.clearTimeout(pageStateRef.current.scrollTimeoutId);
          if (moveParticlesOnHover) {
             container.removeEventListener('mousemove', handleMouseMove);
          }
