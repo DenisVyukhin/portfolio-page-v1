@@ -93,8 +93,12 @@ function Header() {
                </button>
             </div>
             <nav onClick={closeNavigation} className={styles.navContent}>
-               {navItems.map(([label, href]) => (
-                  <a href={href} key={href}>
+               {navItems.map(([label, href], index) => (
+                  <a
+                     href={href}
+                     key={href}
+                     style={{ "--nav-item-index": index }}
+                  >
                      <span>&gt;</span>
                      {label}
                   </a>

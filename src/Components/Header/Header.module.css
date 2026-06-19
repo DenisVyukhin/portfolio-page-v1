@@ -90,17 +90,25 @@
    position: fixed;
    inset: 0;
    z-index: 980;
-   display: none;
    width: 100vw;
    height: 100vh;
    padding: 0;
    background-color: rgba(0, 0, 0, .58);
    border: none;
    backdrop-filter: blur(6px);
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+   transition:
+      opacity .42s ease,
+      visibility 0s linear .42s;
 }
 
 .backdropVisible {
-   display: block;
+   opacity: 1;
+   visibility: visible;
+   pointer-events: auto;
+   transition-delay: 0s;
 }
 
 .navigation {
@@ -115,12 +123,22 @@
    background-color: var(--surface-color);
    border-right: 1px solid var(--panel-color);
    box-shadow: 18px 0 60px rgba(0, 0, 0, .28);
-   transform: translateX(-105%);
-   transition: transform .25s ease;
+   opacity: .7;
+   visibility: hidden;
+   transform: translate3d(-105%, 0, 0) scaleX(.94);
+   transform-origin: left center;
+   transition:
+      transform .56s cubic-bezier(.22, 1, .36, 1),
+      opacity .34s ease,
+      visibility 0s linear .56s;
+   will-change: transform;
 }
 
 .navigationOpen {
-   transform: translateX(0);
+   opacity: 1;
+   visibility: visible;
+   transform: translate3d(0, 0, 0) scaleX(1);
+   transition-delay: 0s;
 }
 
 .navHead {
@@ -133,6 +151,30 @@
 .navHead h3 {
    margin: 0;
    font-size: 1.05rem;
+}
+
+.navHead h3,
+.navHead button {
+   opacity: 0;
+   transform: translate3d(-18px, 0, 0);
+   transition:
+      opacity .3s ease,
+      transform .42s cubic-bezier(.22, 1, .36, 1);
+}
+
+.navHead button {
+   transform: translate3d(-12px, 0, 0) rotate(-45deg) scale(.88);
+}
+
+.navigationOpen .navHead h3,
+.navigationOpen .navHead button {
+   opacity: 1;
+   transform: translate3d(0, 0, 0) rotate(0) scale(1);
+   transition-delay: .16s;
+}
+
+.navigationOpen .navHead button {
+   transition-delay: .22s;
 }
 
 .navContent {
@@ -150,7 +192,23 @@
    font-weight: 700;
    text-decoration: none;
    border-radius: 8px;
-   transition: color .2s ease, background-color .2s ease;
+   opacity: 0;
+   transform: translate3d(-28px, 10px, 0) scale(.97);
+   transition:
+      color .2s ease,
+      background-color .2s ease,
+      opacity .3s ease,
+      transform .46s cubic-bezier(.22, 1, .36, 1);
+}
+
+.navigationOpen .navContent a {
+   opacity: 1;
+   transform: translate3d(0, 0, 0) scale(1);
+   transition-delay:
+      0s,
+      0s,
+      calc(.24s + var(--nav-item-index) * .07s),
+      calc(.24s + var(--nav-item-index) * .07s);
 }
 
 .navContent a:hover {
@@ -160,6 +218,17 @@
 
 .navContent span {
    color: var(--accent-color-1);
+   opacity: 0;
+   transform: translateX(-8px);
+   transition:
+      opacity .25s ease,
+      transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.navigationOpen .navContent span {
+   opacity: 1;
+   transform: translateX(0);
+   transition-delay: calc(.31s + var(--nav-item-index) * .07s);
 }
 
 @media (max-width: 760px) {
@@ -174,5 +243,24 @@
 
    .burger {
       display: inline-flex;
+   }
+}
+
+@media (min-width: 761px) {
+   .backdrop,
+   .navigation {
+      display: none;
+   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .backdrop,
+   .navigation,
+   .navHead h3,
+   .navHead button,
+   .navContent a,
+   .navContent span {
+      transition-duration: .01ms;
+      transition-delay: 0s;
    }
 }
