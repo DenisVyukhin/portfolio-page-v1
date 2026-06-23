@@ -5,6 +5,13 @@ import "./globals.css";
 import Header from "@/Components/Header/Header.jsx";
 import Particles from "@/Components/Animations/Particles.jsx";
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kodersup-portfolio.vercel.app").replace(/\/$/, "");
+const siteName = "KodersUp Portfolio";
+const siteTitle = "KodersUp | Денис Вюхин - Fullstack-разработчик";
+const siteDescription =
+   "Портфолио Дениса Вюхина: fullstack-разработка на React и Next.js, backend на Python, Telegram-боты, AI-интеграции и веб-проекты.";
+const previewImage = "/readme-page-preview.png";
+
 const montserrat = Montserrat({
    variable: "--font-montserrat",
    subsets: ["latin", "cyrillic"],
@@ -12,8 +19,71 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-   title: "KodersUp | Fullstack Portfolio",
-   description: "Портфолио Дениса Вюхина: fullstack-разработка, Telegram-боты, AI-интеграции и веб-проекты.",
+   metadataBase: new URL(siteUrl),
+   applicationName: siteName,
+   title: {
+      default: siteTitle,
+      template: "%s | KodersUp",
+   },
+   description: siteDescription,
+   keywords: [
+      "KodersUp",
+      "Денис Вюхин",
+      "Denis Vyuhin",
+      "fullstack разработчик",
+      "портфолио разработчика",
+      "React разработчик",
+      "Next.js разработчик",
+      "Python разработчик",
+      "Telegram bot developer",
+      "AI интеграции",
+   ],
+   authors: [{ name: "Denis Vyuhin", url: siteUrl }],
+   creator: "Denis Vyuhin",
+   publisher: "KodersUp",
+   category: "portfolio",
+   alternates: {
+      canonical: "/",
+      languages: {
+         ru: "/",
+      },
+   },
+   openGraph: {
+      type: "profile",
+      locale: "ru_RU",
+      url: "/",
+      siteName,
+      title: siteTitle,
+      description: siteDescription,
+      firstName: "Denis",
+      lastName: "Vyuhin",
+      username: "KodersUp",
+      images: [
+         {
+            url: previewImage,
+            width: 2702,
+            height: 1324,
+            alt: "KodersUp Portfolio - портфолио fullstack-разработчика Дениса Вюхина",
+         },
+      ],
+   },
+   twitter: {
+      card: "summary_large_image",
+      title: siteTitle,
+      description: siteDescription,
+      images: [previewImage],
+   },
+   robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+         index: true,
+         follow: true,
+         "max-image-preview": "large",
+         "max-snippet": -1,
+         "max-video-preview": -1,
+      },
+   },
    icons: {
       icon: "/icons/favicon.PNG",
       shortcut: "/icons/shortcut.ico",
@@ -21,9 +91,87 @@ export const metadata = {
    }
 };
 
+export const viewport = {
+   width: "device-width",
+   initialScale: 1,
+   colorScheme: "dark light",
+   themeColor: [
+      { media: "(prefers-color-scheme: dark)", color: "#05070d" },
+      { media: "(prefers-color-scheme: light)", color: "#f7f9fc" },
+   ],
+};
+
+const jsonLd = {
+   "@context": "https://schema.org",
+   "@graph": [
+      {
+         "@type": "Person",
+         "@id": `${siteUrl}/#person`,
+         name: "Denis Vyuhin",
+         alternateName: ["Денис Вюхин", "KodersUp"],
+         url: siteUrl,
+         jobTitle: "Fullstack Developer",
+         description:
+            "Fullstack-разработчик, создающий веб-приложения, Telegram-ботов, backend-сервисы и AI-интеграции.",
+         knowsAbout: [
+            "React",
+            "Next.js",
+            "JavaScript",
+            "Python",
+            "Django",
+            "Node.js",
+            "PostgreSQL",
+            "MongoDB",
+            "Telegram bots",
+            "AI integrations",
+         ],
+         sameAs: [
+            "https://t.me/KodersUp",
+            "https://github.com/DenisVyukhin/",
+            "https://vk.com/kodersup_iu",
+         ],
+      },
+      {
+         "@type": "WebSite",
+         "@id": `${siteUrl}/#website`,
+         url: siteUrl,
+         name: siteName,
+         inLanguage: "ru-RU",
+         description: siteDescription,
+         publisher: {
+            "@id": `${siteUrl}/#person`,
+         },
+      },
+      {
+         "@type": "ItemList",
+         "@id": `${siteUrl}/#projects`,
+         name: "Проекты KodersUp",
+         itemListElement: [
+            "APDE 2.0",
+            "IU Helper",
+            "Renneo",
+            "Twitblit",
+            "Arc Dynamics",
+            "KodersUp Portfolio",
+            "Kazinkov Bot",
+         ].map((name, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name,
+         })),
+      },
+   ],
+};
+
 export default function RootLayout({ children }) {
    return (
       <html lang="ru" className={montserrat.variable} suppressHydrationWarning>
+         <head>
+            <script
+               type="application/ld+json"
+               dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+         </head>
          <body>
             <Provider>
                <Header />

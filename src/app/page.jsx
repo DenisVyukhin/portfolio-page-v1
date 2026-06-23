@@ -47,7 +47,7 @@ const projects = [
    {
       name: "IU Helper",
       description:
-         "Telegram-бот для поиска и публикации учебных ответов. Есть ИИ-ассистент, система пользовательских решений и ежегодные розыгрыши для активных участников.",
+         "1500+ пользователей, ₽50000+ выручки. Telegram-бот для поиска и публикации учебных ответов. Есть ИИ-ассистент, система пользовательских решений и ежегодные розыгрыши для активных участников.",
       stack: ["Python", "Aiogram", "SQLAlchemy", "Mistral AI"],
       impact: "50 000+ руб. выручки",
       img: "telegram-bot.webp",
@@ -79,7 +79,7 @@ const projects = [
       description:
          "Аналог сайта Boston Dynamics, сделанный для портфолио: продуктовый сайт робототехнической компании.",
       stack: ["Next.js", "React JS", "TypeScript", "Tailwind", "ESLint"],
-      impact: "Учебный fullstack-проект",
+      impact: "fullstack-пет-проект",
       img: "arc-dynamics-preview.png",
       link: "https://arc-dynamics.vercel.app/",
       gitlink: "https://github.com/DenisVyukhin/Arc-Dynamic",
@@ -146,9 +146,9 @@ const stackGroups = [
 
 const highlights = [
    "Fullstack-разработка с 2021 года",
-   "Рекордсмен по пауэрлифтингу",
-   "Победитель Yandex Cup",
-   "Делаю проекты от идеи до запуска",
+   "2+ года коммерческой разработки",
+   "Веб, мобильные приложения и автоматизация",
+   "От идеи и до готового продукта",
 ];
 
 const contacts = [
@@ -316,10 +316,10 @@ function Home() {
 
                         <div className="core-screen">
                            <div className="terminal-lines" aria-hidden="true">
-                              <span>deploy portfolio --clean-ui</span>
-                              <span>connect ai.assistant()</span>
-                              <span>telegram.bot.revenue += 50000</span>
-                              <span>powerlifting.record = true</span>
+                              <span>core.experience += {experience}</span>
+                              <span>products.launch()</span>
+                              <span>connect core.ai.integrate()</span>
+                              <span>core.status = "online"</span>
                            </div>
 
                            <div className="core-pulse">
@@ -346,7 +346,7 @@ function Home() {
                         <TextType
                            as="span"
                            className="text-type"
-                           text={["Fullstack разработчик", "AI интегратор", "Cпортсмен"]}
+                           text={["Fullstack разработчик", "AI интегратор", "Современный стек"]}
                            typingSpeed={58}
                            pauseDuration={2200}
                            showCursor={true}
@@ -357,7 +357,7 @@ function Home() {
                      </span>
                   </h1>
                   <p className="hero-lead">
-                     {age} лет, {experience}+ лет в разработке. Создаю сайты, Telegram-ботов,
+                     {experience}+ лет в разработке. Создаю сайты, Telegram-ботов,
                      Android-приложения и продукты с ИИ: от прототипа и дизайна до backend-логики, базы данных
                      и аккуратного пользовательского интерфейса.
                   </p>
@@ -441,17 +441,20 @@ function Home() {
             <ScrollReveal as="h2" id="about-me" className="block-name" delay={140}>Обо мне</ScrollReveal>
             <ScrollReveal className="about-me-container" delay={200} variant="scale">
                <div className="about-copy">
+                  
                   <p>
-                     Меня зовут Денис. С раннего возраста мне было интересно разбираться в том,
-                     как устроены сложные технологии и системы. Этот интерес привёл меня от конструирования
-                     моделей и робототехники к программированию и созданию собственныхпроектов.
+                     Я fullstack-разработчик, который занимается созданием веб-сервисов,
+                     мобильных приложений и автоматизацией процессов.
+                     Для меня важно не только написать работающий код, 
+                     но и сделать продукт удобным, быстрым и продуманным до мелочей.
                   </p>
                   <p>
-                     Сегодня я занимаюсь fullstack-разработкой, Telegram-ботами, мобильными
-                     приложениями и ИИ-интеграциями. Для меня важно не только написать код,
-                     но и создать продукт, который решает реальные задачи. Профессиональный спорт 
-                     и звание рекордсмена по пауэрлифтингу помогли развить дисциплину,
-                     ответственность и умение доводить начатое до результата.
+                     С 2021 года я разрабатываю проекты разного масштаба 
+                     – от сайтов и Telegram-ботов до собственных приложений и
+                     инструментов для разработчиков. Работаю как с клиентской 
+                     частью, так и с серверной логикой, базами данных, API и 
+                     интеграциями. Мне нравится превращать идеи в реальные продукты, 
+                     полностью сопровождая путь от первого прототипа до запуска.
                   </p>
                </div>
 
@@ -465,8 +468,8 @@ function Home() {
                      <span>практики в разработке</span>
                   </ScrollReveal>
                   <ScrollReveal delay={400} threshold={0.06}>
-                     <strong>КМС</strong>
-                     <span>рекордсмен по пауэрлифтингу</span>
+                     <strong>20+</strong>
+                     <span>Довольных клиентов</span>
                   </ScrollReveal>
                </div>
 
@@ -485,7 +488,7 @@ function Home() {
             <ScrollReveal as="h2" id="contacts" className="block-name" delay={140}>Контакты</ScrollReveal>
             <div className="contacts-content">
                <ScrollReveal className="contacts-container" variant="scale" delay={200}>
-                  <h3>Отвечаю в течение 30 минут</h3>
+                  <h3>Время по МСК</h3>
                   <p>ツ</p>
 
                   <div className="contacts-list">
