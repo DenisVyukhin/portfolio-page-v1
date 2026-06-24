@@ -7,9 +7,9 @@ import Particles from "@/Components/Animations/Particles.jsx";
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kodersup-portfolio.vercel.app").replace(/\/$/, "");
 const siteName = "KodersUp Portfolio";
-const siteTitle = "KodersUp | Денис Вюхин - Fullstack-разработчик";
+const siteTitle = "KodersUp | Fullstack-разработчик";
 const siteDescription =
-   "Портфолио Дениса Вюхина: fullstack-разработка на React и Next.js, backend на Python, Telegram-боты, AI-интеграции и веб-проекты.";
+   "Портфолио KodersUp: fullstack-разработка на React и Next.js, backend на Node.js/Python/Java, Telegram-боты, AI-интеграции и веб-проекты.";
 const previewImage = "/readme-page-preview.png";
 
 const montserrat = Montserrat({
@@ -32,9 +32,16 @@ export const metadata = {
       "Denis Vyuhin",
       "fullstack разработчик",
       "портфолио разработчика",
+      "пример портфолио",
+      "программист",
       "React разработчик",
+      "React программист",
       "Next.js разработчик",
+      "Next.js программист",
       "Python разработчик",
+      "Python программист",
+      "Java разработчик",
+      "Java программист",
       "Telegram bot developer",
       "AI интеграции",
    ],
@@ -63,7 +70,7 @@ export const metadata = {
             url: previewImage,
             width: 2702,
             height: 1324,
-            alt: "KodersUp Portfolio - портфолио fullstack-разработчика Дениса Вюхина",
+            alt: "KodersUp Portfolio - портфолио fullstack-разработчика",
          },
       ],
    },
