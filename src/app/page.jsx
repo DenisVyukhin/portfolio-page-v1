@@ -45,10 +45,20 @@ const projects = [
       gitlink: "https://github.com/DenisVyukhin/APDE-2.0",
    },
    {
+      name: "Subrio",
+      description:
+         "Трекер подписок для iOS с напоминаниями о продлении, хранением данных, с современным интерфейсом, панелью аналитики, настраиваемыми циклами оплаты, уведомлениями и прогнозом расходов.",
+      stack: ["Swift", "SwiftUI", "PostgreSQL", "Supabase", "MVVM", ],
+      impact: "iOS приложение",
+      img: "subrio-image.png",
+      link: "/projects",
+      gitlink: "https://github.com/DenisVyukhin/Subrio",
+   },
+   {
       name: "IU Helper",
       description:
          "1500+ пользователей, ₽50000+ выручки. Telegram-бот для поиска и публикации учебных ответов. Есть ИИ-ассистент, система пользовательских решений и ежегодные розыгрыши для активных участников.",
-      stack: ["Python", "Aiogram", "SQLAlchemy", "Mistral AI"],
+      stack: ["Python", "Aiogram", "PostgreSQL", "SQLAlchemy", "Mistral AI"],
       impact: "50 000+ руб. выручки",
       img: "telegram-bot.webp",
       link: "https://t.me/iu_helper_bot",
@@ -78,7 +88,7 @@ const projects = [
       name: "Arc Dynamics",
       description:
          "Аналог сайта Boston Dynamics, сделанный для портфолио: продуктовый сайт робототехнической компании.",
-      stack: ["Next.js", "React JS", "TypeScript", "Tailwind", "ESLint"],
+      stack: ["Next.js", "React", "NestJS", "TypeScript", "Tailwind", "ESLint"],
       impact: "fullstack-пет-проект",
       img: "arc-dynamics-preview.png",
       link: "https://arc-dynamics.vercel.app/",
@@ -88,21 +98,11 @@ const projects = [
       name: "KodersUp Portfolio",
       description:
          "Динамическое портфолио с несколькими темами, UI-эффектами, анимациями и аккуратной подачей персонального бренда.",
-      stack: ["React JS", "React Bits", "GSAP", "SCSS", "Vercel SI"],
+      stack: ["React", "React Bits", "GSAP", "SCSS", "Vercel SI"],
       impact: "Персональный бренд",
       img: "readme-page-preview.png",
       link: "https://kodersup-portfolio.vercel.app/",
       gitlink: "https://github.com/DenisVyukhin/portfolio-page-v1",
-   },
-   {
-      name: "Kazinkov Bot",
-      description:
-         "Развлекательный Telegram-бот с игровой валютой, набором мини-игр, ИИ-интеграциями и сезонными активностями.",
-      stack: ["Python", "Aiogram", "PostgreSQL", "SQLAlchemy", "Gemini AI"],
-      impact: "Игровая экономика",
-      img: "bot.png",
-      link: "https://t.me/KazinkovBot",
-      gitlink: "https://github.com/DenisVyukhin/",
    },
 ];
 
@@ -128,6 +128,7 @@ const stackGroups = [
          ["Java", "java"],
          ["Django", "django"],
          ["Node.js", "node"],
+         ["NestJS", "nestjs"],
          ["PostgreSQL", "mysql"],
          ["MongoDB", "mongodb"],
       ],
@@ -358,7 +359,7 @@ function Home() {
                   </h1>
                   <p className="hero-lead">
                      {experience}+ лет в разработке. Создаю сайты, Telegram-ботов,
-                     Android-приложения и продукты с ИИ: от прототипа и дизайна до backend-логики, базы данных
+                     Android/iOS-приложения и продукты с ИИ: от прототипа и дизайна до backend-логики, базы данных
                      и аккуратного пользовательского интерфейса.
                   </p>
 

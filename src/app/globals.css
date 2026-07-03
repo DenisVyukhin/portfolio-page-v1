@@ -796,7 +796,7 @@ hr {
 .technology.html:hover { border-color: #ff6b2b; color: #ff8a54; box-shadow: 0 0 22px rgba(255, 107, 43, .18); }
 .technology.css:hover { border-color: #3478ff; color: #5a93ff; box-shadow: 0 0 22px rgba(52, 120, 255, .18); }
 .technology.js:hover { border-color: #f2bd27; color: #f2bd27; box-shadow: 0 0 22px rgba(242, 189, 39, .18); }
-.technology.p5js:hover { border-color: #00c2ff; color: #00c2ff; box-shadow: 0 0 22px rgba(0, 194, 255, .18); }
+.technology.p5js:hover { border-color: #ff0066; color: #ff0066; box-shadow: 0 0 22px rgba(255, 0, 115, 0.18); }
 .technology.react:hover { border-color: #31d7ff; color: #31d7ff; box-shadow: 0 0 22px rgba(49, 215, 255, .18); }
 .technology.next:hover { border-color: var(--main-text); color: var(--main-text); box-shadow: 0 0 22px rgba(255, 255, 255, .12); }
 .technology.tailwind:hover { border-color: #38bdf8; color: #38bdf8; box-shadow: 0 0 22px rgba(56, 189, 248, .18); }
@@ -806,6 +806,7 @@ hr {
 .technology.mysql:hover { border-color: #7dd3fc; color: #7dd3fc; box-shadow: 0 0 22px rgba(125, 211, 252, .18); }
 .technology.mongodb:hover { border-color: #65d46e; color: #65d46e; box-shadow: 0 0 22px rgba(101, 212, 110, .18); }
 .technology.node:hover { border-color: #9dd85d; color: #9dd85d; box-shadow: 0 0 22px rgba(157, 216, 93, .18); }
+.technology.nestjs:hover { border-color: #ff0066; color: #ff0066; box-shadow: 0 0 22px rgba(255, 0, 115, 0.18); }
 .technology.docker:hover { border-color: #2496ed; color: #2496ed; box-shadow: 0 0 22px rgba(36, 150, 237, .18); }
 .technology.github:hover { border-color: #b98cff; color: #b98cff; box-shadow: 0 0 22px rgba(185, 140, 255, .18); }
 .technology.figma:hover { border-color: #ff7262; color: #ff7262; box-shadow: 0 0 22px rgba(255, 114, 98, .18); }
