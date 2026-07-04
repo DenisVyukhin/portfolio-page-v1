@@ -39,7 +39,7 @@ const projects = [
       description:
          "Мобильный IDE для Processing (Java) на Android. Позволяет запускать скетчи прямо на телефоне или планшете.",
       stack: ["Processing", "Java", "Kotlin", "Gradle", "Local AI"],
-      impact: "Аналог мобильного приложения",
+      impact: "Android приложение",
       img: "apde.png",
       link: "/projects",
       gitlink: "https://github.com/DenisVyukhin/APDE-2.0",
