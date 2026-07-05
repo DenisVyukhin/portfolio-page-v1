@@ -126,7 +126,7 @@ const stackGroups = [
       items: [
          ["Python", "python"],
          ["Java", "java"],
-         ["Django", "django"],
+         ["TypeScript", "typescript"],
          ["Node.js", "node"],
          ["NestJS", "nestjs"],
          ["PostgreSQL", "mysql"],
@@ -475,7 +475,7 @@ function Home() {
                </div>
 
                <div className="resume-container">
-                  <a href="/no_resume.png" download>
+                  <a href="/Денис_Вюхин_резюме.pdf" download>
                      <FiDownload size={20} />
                      Скачать резюме
                   </a>
