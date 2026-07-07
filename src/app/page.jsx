@@ -134,6 +134,19 @@ const stackGroups = [
       ],
    },
    {
+      title: "Мобайл",
+      imageId: "mobile-image",
+      items: [
+         ["Kotlin", "kotlin"],
+         ["Swift", "swift"],
+         ["Jetpack Compose", "compose"],
+         ["SwiftUI", "swiftui"],
+         ["MVVM", "mvvm"],
+         ["Firebase", "firebase"],
+         ["Supabase", "supabase"],
+      ],
+   },
+   {
       title: "Инструменты",
       imageId: "another-image",
       items: [

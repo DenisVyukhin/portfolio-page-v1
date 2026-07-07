@@ -832,6 +832,8 @@ hr {
 .stack-block.scroll-reveal.is-visible .technology:nth-child(5) { --technology-reveal-delay: calc(var(--reveal-delay) + 460ms); }
 .stack-block.scroll-reveal.is-visible .technology:nth-child(6) { --technology-reveal-delay: calc(var(--reveal-delay) + 510ms); }
 .stack-block.scroll-reveal.is-visible .technology:nth-child(7) { --technology-reveal-delay: calc(var(--reveal-delay) + 560ms); }
+.stack-block.scroll-reveal.is-visible .technology:nth-child(8) { --technology-reveal-delay: calc(var(--reveal-delay) + 610ms); }
+.stack-block.scroll-reveal.is-visible .technology:nth-child(9) { --technology-reveal-delay: calc(var(--reveal-delay) + 660ms); }
 
 .stack-block.scroll-reveal.is-visible .technology:hover {
    translate: 0 -2px;
@@ -882,6 +884,15 @@ hr {
 .technology.mongodb:hover { border-color: #65d46e; color: #65d46e; box-shadow: 0 0 22px rgba(101, 212, 110, .18); }
 .technology.node:hover { border-color: #9dd85d; color: #9dd85d; box-shadow: 0 0 22px rgba(157, 216, 93, .18); }
 .technology.nestjs:hover { border-color: #ff0066; color: #ff0066; box-shadow: 0 0 22px rgba(255, 0, 115, 0.18); }
+.technology.kotlin:hover { border-color: #a970ff; color: #b88cff; box-shadow: 0 0 22px rgba(169, 112, 255, .18); }
+.technology.swift:hover { border-color: #ff7a36; color: #ff925c; box-shadow: 0 0 22px rgba(255, 122, 54, .18); }
+.technology.compose:hover { border-color: #35c98b; color: #4fd69b; box-shadow: 0 0 22px rgba(53, 201, 139, .18); }
+.technology.swiftui:hover { border-color: #0ea5e9; color: #38bdf8; box-shadow: 0 0 22px rgba(14, 165, 233, .18); }
+.technology.uikit:hover { border-color: #2f80ed; color: #5b9bff; box-shadow: 0 0 22px rgba(47, 128, 237, .18); }
+.technology.mvvm:hover { border-color: #c084fc; color: #d8b4fe; box-shadow: 0 0 22px rgba(192, 132, 252, .18); }
+.technology.firebase:hover { border-color: #ffca28; color: #ffd95a; box-shadow: 0 0 22px rgba(255, 202, 40, .18); }
+.technology.supabase:hover { border-color: #3ecf8e; color: #55e6a5; box-shadow: 0 0 22px rgba(62, 207, 142, .18); }
+.technology.swiftdata:hover { border-color: #ff4f8b; color: #ff77a6; box-shadow: 0 0 22px rgba(255, 79, 139, .18); }
 .technology.docker:hover { border-color: #2496ed; color: #2496ed; box-shadow: 0 0 22px rgba(36, 150, 237, .18); }
 .technology.github:hover { border-color: #b98cff; color: #b98cff; box-shadow: 0 0 22px rgba(185, 140, 255, .18); }
 .technology.figma:hover { border-color: #ff7262; color: #ff7262; box-shadow: 0 0 22px rgba(255, 114, 98, .18); }
@@ -914,6 +925,10 @@ hr {
 
 #backend-image::before {
    background-image: url("/backend-image.webp");
+}
+
+#mobile-image::before {
+   background-image: url("/mobile_image.webp");
 }
 
 #another-image::before {
