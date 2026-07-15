@@ -15,7 +15,7 @@ import ProjectCard from "@/Components/ProjectCard/ProjectsCard.jsx";
 import ScrollReveal from "@/Components/Animations/ScrollReveal.jsx";
 import TextType from "@/Components/Animations/TextType.jsx";
 
-const birthDate = new Date("2008-07-16");
+const birthDate = new Date("2007-07-16");
 const careerStartYear = 2021;
 
 const getAge = () => {
